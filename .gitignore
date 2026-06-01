@@ -1,0 +1,18 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Build output / distributable bundle
+dist/
+
+# macOS
+.DS_Store
+
+# Xcode (in case the project is opened there)
+*.xcodeproj
+xcuserdata/
+DerivedData/
+
+# Notarization artifacts
+*.zip
