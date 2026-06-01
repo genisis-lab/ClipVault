@@ -68,9 +68,15 @@ struct HistoryRow: View {
         }
     }
 
-    private var relativeTime: String {
+    /// Shared formatter — allocating a `RelativeDateTimeFormatter` per row
+    /// render is wasteful while scrolling, so reuse a single instance.
+    private static let relativeFormatter: RelativeDateTimeFormatter = {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .abbreviated
-        return formatter.localizedString(for: item.createdAt, relativeTo: Date())
+        return formatter
+    }()
+
+    private var relativeTime: String {
+        Self.relativeFormatter.localizedString(for: item.createdAt, relativeTo: Date())
     }
 }
