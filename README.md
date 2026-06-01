@@ -75,3 +75,7 @@ Requires macOS 14+ and a Swift 5.9+ toolchain (Xcode 15+).
 The clipboard has no change notification on macOS, so ClipVault polls
 `changeCount` on a short timer (default 0.4s) — the standard approach used by
 every clipboard manager.
+
+## License
+
+ClipVault is released under the [MIT License](LICENSE).
